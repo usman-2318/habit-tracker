@@ -9,6 +9,7 @@ const empty_state = document.getElementById("empty-state");
 const prev_week_btn = document.getElementById("prev-week-btn");
 
 const next_week_btn = document.getElementById("next-week-btn");
+const current_week_btn = document.getElementById("current-week-btn");
 
 let habits = [];
 
@@ -181,8 +182,10 @@ function renderHabits() {
 
       // Toggle checkbox
       input.addEventListener("change", () => {
-        if (input.checked && !habit.completedValue.includes(day.fullDate)) {
-          habit.completedValue.push(day.fullDate);
+        if (input.checked) {
+          if (!habit.completedValue.includes(day.fullDate)) {
+            habit.completedValue.push(day.fullDate);
+          }
         } else {
           habit.completedValue = habit.completedValue.filter(
             (value) => value !== day.fullDate,
@@ -328,6 +331,11 @@ next_week_btn.addEventListener("click", () => {
   renderHabits();
 });
 
+current_week_btn.addEventListener("click", () => {
+  currentWeekOffset = 0;
+
+  renderHabits();
+});
 // Initialize app
 function init() {
   habits = getDataFromLocalStorage();
