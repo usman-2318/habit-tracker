@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit Tracker</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <h1>Habit Tracker</h1>
+        <p>Track your habits weekly</p>
+      </header>
+
+      <!-- Add Habit -->
+      <section class="habit-form">
+        <input type="text" id="habit-input" placeholder="Enter a habit..." />
+
+        <button id="add-habit-btn">Add Habit</button>
+      </section>
+
+      <!-- Week Navigation -->
+      <section class="week-navigation">
+        <button id="prev-week-btn">← Previous</button>
+
+        <h2 id="week-title">This Week</h2>
+
+        <button id="next-week-btn">Next →</button>
+      </section>
+
+      <!-- Habit Grid -->
+      <section id="habit-grid"></section>
+
+      <!-- Empty State -->
+      <section id="empty-state">
+        <p>No habits yet.</p>
+        <span>Add your first habit to start tracking.</span>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
